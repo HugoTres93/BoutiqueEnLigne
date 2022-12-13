@@ -11,17 +11,20 @@ using System.Threading.Tasks;
 
 namespace BoutiqueEnLigne.Core.Configuration
 {
-    internal class PanierUtilisateurConfiguration : IEntityTypeConfiguration<PanierUtilisateur>
+    internal class PanierConfiguration : IEntityTypeConfiguration<ProduitPanier>
     {
-        public void Configure(EntityTypeBuilder<PanierUtilisateur> builder)
+        public void Configure(EntityTypeBuilder<ProduitPanier> builder)
         {
-            builder.HasKey(pu => new { pu.PanierId, pu.ProduitsId });
-            builder.HasOne(pu => pu.Panier)
-                .WithMany(p => p.PanierUtilisateur)
-                .HasForeignKey(pu => pu.PanierId);
-            builder.HasOne(pu => pu.Produit)
-                .WithMany(p => p.PanierUtilisateur)
-                .HasForeignKey(pu => pu.ProduitsId);
+
+            builder.HasKey(p => new { p.UtilisateurId, p.ProduitsId });
+            // Utilisateur vers panier one to many
+            builder.HasOne(p => p.Utilisateur)
+                .WithMany(p => p.Panier)
+                .HasForeignKey(p => p.UtilisateurId);
+            // Produit vers panier one to many
+            builder.HasOne(p => p.Produit)
+                .WithMany(p => p.Paniers)
+                .HasForeignKey(p => p.ProduitsId);
         }
     }
 }

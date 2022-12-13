@@ -1,12 +1,17 @@
+using BoutiqueEnLigne.Core.Services;
 using BoutiqueEnLigne.Repositories;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-//builder.Services.AddDbContext<MyContext>(options => options.UseSqlServer(builder.Configuration.GetConnextionString("")));
-// builer.Configuration["ParamTest"];
-// builder.Services.AddScoped<IExempleService, ExempleService>();
+builder.Services.AddDbContext<MyContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("connexion")));
+//builer.Configuration["ParamTest"];
+//builder.Services.AddScoped<IExempleService, ExempleService>();
+builder.Services.AddScoped<IProduitPanierServices, ProduitPanierServices>();
+builder.Services.AddScoped<IProduitsServices, ProduitsService>();
+builder.Services.AddScoped<IUtilisateurServices, UtilisateurServices>();
 
 // Enregistrer les services ici
 

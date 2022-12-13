@@ -5,14 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BoutiqueEnLigne.Core.Services
+namespace BoutiqueEnLigne.Core.Repositories
 {
-    public interface IProduitsServices
+    internal interface IUtilisateur
     {
         void Delete(int id);
         List<Produits> GetAll();
         Produits GetById(int id);
-        void Insert(Produits produits);
-        void Update(Produits produits);
+        void Insert(Utilisateur utilisateur);
+        void Update(Utilisateur utilisateur);
     }
 }

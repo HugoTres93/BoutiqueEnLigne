@@ -15,12 +15,11 @@ namespace BoutiqueEnLigne.Repositories
 
         public DbSet<Utilisateur> Utilisateurs { get; set; }
         public DbSet<Produits> Produits { get; set; }
-        public DbSet<Panier> Panier { get; set; }
-        public DbSet<PanierUtilisateur> PanierUtilisateurs { get; set; }
+        public DbSet<ProduitPanier> ProduitsPaniers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.ApplyConfiguration(new PanierUtilisateurConfiguration());
+            builder.ApplyConfiguration(new PanierConfiguration());
            
         }
     }

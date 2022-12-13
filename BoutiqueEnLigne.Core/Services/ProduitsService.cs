@@ -1,4 +1,5 @@
 ﻿using BoutiqueEnLigne.Core.Model;
+using BoutiqueEnLigne.Core.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,29 +10,32 @@ namespace BoutiqueEnLigne.Core.Services
 {
     public class ProduitsService : IProduitsServices
     {
+        private IProduit repo;
+
+
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            repo.Delete(id);
         }
 
         public List<Produits> GetAll()
         {
-            throw new NotImplementedException();
+            return repo.GetAll();
         }
 
         public Produits GetById(int id)
         {
-            throw new NotImplementedException();
+            return repo.GetById(id);
         }
 
         public void Insert(Produits produits)
         {
-            throw new NotImplementedException();
+            repo.Insert(produits);
         }
 
         public void Update(Produits produits)
         {
-            throw new NotImplementedException();
+            repo.Update(produits);
         }
     }
 }

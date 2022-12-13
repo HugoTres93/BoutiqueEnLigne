@@ -1,7 +1,5 @@
 ﻿using BoutiqueEnLigne.Core.Model;
 using BoutiqueEnLigne.Core.Repositories;
-using BoutiqueEnLigne.Repositories;
-using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +8,10 @@ using System.Threading.Tasks;
 
 namespace BoutiqueEnLigne.Core.Services
 {
-    public class UtilisateurServices : IUtilisateurServices
+    public class ProduitPanierServices : IProduitPanierServices
     {
-        private IUtilisateur repo;
+        private IProduitPanier repo;
+
 
         public void Delete(int id)
         {
@@ -25,18 +24,18 @@ namespace BoutiqueEnLigne.Core.Services
         }
 
         public Produits GetById(int id)
-        {
+        {  
             return repo.GetById(id);
         }
 
-        public void Insert(Utilisateur utilisateur)
+        public void Insert(ProduitPanier produitPanier)
         {
-            repo.Insert(utilisateur);
+            repo.Insert(produitPanier);
         }
 
-        public void Update(Utilisateur utilisateur)
+        public void Update(ProduitPanier produitPanier)
         {
-            repo.Update(utilisateur);
+            repo.Update(produitPanier);
         }
     }
 }

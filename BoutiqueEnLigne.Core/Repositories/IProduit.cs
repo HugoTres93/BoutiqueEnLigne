@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BoutiqueEnLigne.Core.Services
+namespace BoutiqueEnLigne.Core.Repositories
 {
-    internal interface IPanierServices
+    internal interface IProduit
     {
         void Delete(int id);
         List<Produits> GetAll();

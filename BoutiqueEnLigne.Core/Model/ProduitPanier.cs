@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace BoutiqueEnLigne.Core.Model
 {
-    public class PanierUtilisateur
+    public class ProduitPanier
     {
-        public int PanierId { get; set; }
-        public Panier Panier { get; set; }
+        public int UtilisateurId { get; set; }
+        public Utilisateur Utilisateur{ get; set; }
         public int ProduitsId { get; set; }
-        public Produits Produit { get; set;}
-
+        public Produits Produit { get; set; }
     }
 }

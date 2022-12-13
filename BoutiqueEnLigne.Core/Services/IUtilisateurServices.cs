@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace BoutiqueEnLigne.Core.Services
 {
-    internal interface IUtilisateurServices
+    public interface IUtilisateurServices
     {
         void Delete(int id);
         List<Produits> GetAll();
         Produits GetById(int id);
-        void Insert(Produits produits);
-        void Update(Produits produits);
+        void Insert(Utilisateur utilisateur);
+        void Update(Utilisateur utilisateur);
     }
 }
