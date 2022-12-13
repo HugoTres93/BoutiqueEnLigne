@@ -1,7 +1,14 @@
+using BoutiqueEnLigne.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+//builder.Services.AddDbContext<MyContext>(options => options.UseSqlServer(builder.Configuration.GetConnextionString("")));
+// builer.Configuration["ParamTest"];
+// builder.Services.AddScoped<IExempleService, ExempleService>();
+
+// Enregistrer les services ici
 
 var app = builder.Build();
 

@@ -7,4 +7,8 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BoutiqueEnLigne.Core\BoutiqueEnLigne.Core.csproj" />
+  </ItemGroup>
+
 </Project>

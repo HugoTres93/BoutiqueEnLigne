@@ -7,14 +7,17 @@ namespace BoutiqueEnLigne.Client.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        //private readonly IExempleService _exempleService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger/*, IExempleService exempleService */)
         {
             _logger = logger;
+            // _exempleService = exempleService;
         }
 
-        public IActionResult Index()
+        public /* async Task */ IActionResult Index()
         {
+            //await _exempleService.Ajouter();
             return View();
         }
 
