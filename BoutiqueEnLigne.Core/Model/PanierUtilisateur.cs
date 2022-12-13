@@ -8,7 +8,7 @@ namespace BoutiqueEnLigne.Core.Model
 {
     public class PanierUtilisateur
     {
-        public int? PanierId { get; set; }
+        public int PanierId { get; set; }
         public Panier Panier { get; set; }
         public int ProduitsId { get; set; }
         public Produits Produit { get; set;}

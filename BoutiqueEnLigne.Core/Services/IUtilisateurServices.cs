@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BoutiqueEnLigne.Core.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,10 @@ namespace BoutiqueEnLigne.Core.Services
 {
     internal interface IUtilisateurServices
     {
+        void Delete(int id);
+        List<Produits> GetAll();
+        Produits GetById(int id);
+        void Insert(Produits produits);
+        void Update(Produits produits);
     }
 }

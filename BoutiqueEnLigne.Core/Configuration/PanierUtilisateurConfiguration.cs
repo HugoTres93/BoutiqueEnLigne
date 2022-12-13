@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// Voir : https://www.learnentityframeworkcore.com/configuration/many-to-many-relationship-configuration
+
 namespace BoutiqueEnLigne.Core.Configuration
 {
     internal class PanierUtilisateurConfiguration : IEntityTypeConfiguration<PanierUtilisateur>
