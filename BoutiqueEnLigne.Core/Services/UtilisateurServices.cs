@@ -12,9 +12,9 @@ namespace BoutiqueEnLigne.Core.Services
 {
     public class UtilisateurServices : IUtilisateurServices
     {
-        private IUtilisateurServices repo;
+        private IUtilisateurRepositories repo;
 
-        public UtilisateurServices(IUtilisateurServices repo)
+        public UtilisateurServices(IUtilisateurRepositories repo)
         {
             this.repo = repo;
         }
@@ -24,12 +24,12 @@ namespace BoutiqueEnLigne.Core.Services
             repo.Delete(id);
         }
 
-        public List<Produits> GetAll()
+        public List<Utilisateur> GetAll()
         {
             return repo.GetAll();
         }
 
-        public Produits GetById(int id)
+        public Utilisateur GetById(int id)
         {
             return repo.GetById(id);
         }

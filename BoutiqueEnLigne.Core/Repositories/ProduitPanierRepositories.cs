@@ -14,22 +14,22 @@ namespace BoutiqueEnLigne.Core.Repositories
             throw new NotImplementedException();
         }
 
-        public List<Produits> GetAll()
+        public List<ProduitPanier> GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public Produits GetById(int id)
+        public ProduitPanier GetById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void Insert(ProduitPanierRepositories produitPanier)
+        public void Insert(ProduitPanier produitPanier)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(ProduitPanierRepositories produitPanier)
+        public void Update(ProduitPanier produitPanier)
         {
             throw new NotImplementedException();
         }

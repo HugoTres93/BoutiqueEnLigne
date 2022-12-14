@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BoutiqueEnLigne.Core.Repositories
 {
-    internal interface IUtilisateurRepositories
+    public interface IUtilisateurRepositories
     {
         void Delete(int id);
         List<Utilisateur> GetAll();

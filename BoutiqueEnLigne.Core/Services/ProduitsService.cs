@@ -10,9 +10,9 @@ namespace BoutiqueEnLigne.Core.Services
 {
     public class ProduitsService : IProduitsServices
     {
-        private IProduitsServices repo;
+        private IProduitRepositories repo;
 
-        public ProduitsService(IProduitsServices repo)
+        public ProduitsService(IProduitRepositories repo)
         {
             this.repo = repo;
         }

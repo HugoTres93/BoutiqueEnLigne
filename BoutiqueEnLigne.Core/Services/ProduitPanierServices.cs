@@ -10,9 +10,9 @@ namespace BoutiqueEnLigne.Core.Services
 {
     public class ProduitPanierServices : IProduitPanierServices
     {
-        private IProduitPanierServices repo;
+        private IProduitPanierRepositories repo;
 
-        public ProduitPanierServices(IProduitPanierServices repo)
+        public ProduitPanierServices(IProduitPanierRepositories repo)
         {
             this.repo = repo;
         }
@@ -22,12 +22,12 @@ namespace BoutiqueEnLigne.Core.Services
             repo.Delete(id);
         }
 
-        public List<Produits> GetAll()
+        public List<ProduitPanier> GetAll()
         {
             return repo.GetAll();
         }
 
-        public Produits GetById(int id)
+        public ProduitPanier GetById(int id)
         {  
             return repo.GetById(id);
         }
