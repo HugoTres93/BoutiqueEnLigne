@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BoutiqueEnLigne.Admin.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,18 @@ namespace BoutiqueEnLigne.Admin
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void gereUtilisateur_Click(object sender, RoutedEventArgs e)
+        {
+            Utilisateurs gererUser = new Utilisateurs();
+            gererUser.ShowDialog();
+        }
+
+        private void gereProduit_Click(object sender, RoutedEventArgs e)
+        {
+            Produits gererProd = new Produits();
+            gererProd.ShowDialog();
         }
     }
 }

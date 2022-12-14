@@ -6,7 +6,14 @@
         xmlns:local="clr-namespace:BoutiqueEnLigne.Admin"
         mc:Ignorable="d"
         Title="Boutique en ligne" Height="450" Width="800">
-    <Grid>
+    <DockPanel LastChildFill="False">
+        <Menu x:Name="menu1" Height="30" Width="Auto" DockPanel.Dock="Top" Background="White" Foreground="Black">
+            
+            <MenuItem x:Name="Utilisateur" Header="Gerer un Utilisateur" Click="gereUtilisateur_Click">
+            </MenuItem>
+            <MenuItem x:Name="Produit" Header="Gerer les Produits" Click="gereProduit_Click">
+            </MenuItem>
 
-    </Grid>
+        </Menu>
+    </DockPanel>
 </Window>
