@@ -15,7 +15,9 @@ namespace BoutiqueEnLigne.Core.Repositories
         {
             var options = new DbContextOptionsBuilder<MyContext>();
 
-            options.UseSqlServer(@"server=(LocalDb)\MSSQLLocalDB; database=Boutique_En_Ligne;integrated security=True;MultipleActiveResultSets=True;");
+            string bdd = @"server=(LocalDb)\MSSQLLocalDB; database=Boutique_En_Ligne;integrated security=True;MultipleActiveResultSets=True;";
+
+            options.UseSqlServer(bdd);
 
             return new MyContext(options.Options);
         }

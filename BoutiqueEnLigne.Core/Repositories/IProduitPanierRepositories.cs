@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace BoutiqueEnLigne.Core.Repositories
 {
-    internal interface IProduit
+    internal interface IProduitPanierRepositories
     {
         void Delete(int id);
         List<Produits> GetAll();
         Produits GetById(int id);
-        void Insert(Produits produits);
-        void Update(Produits produits);
+        void Insert(ProduitPanierRepositories produitPanier);
+        void Update(ProduitPanierRepositories produitPanier);
     }
 }

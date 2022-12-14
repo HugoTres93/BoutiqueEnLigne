@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace BoutiqueEnLigne.Core.Repositories
 {
-    internal interface IUtilisateur
+    internal interface IUtilisateurRepositories
     {
         void Delete(int id);
-        List<Produits> GetAll();
-        Produits GetById(int id);
+        List<Utilisateur> GetAll();
+        Utilisateur GetById(int id);
         void Insert(Utilisateur utilisateur);
         void Update(Utilisateur utilisateur);
     }

@@ -12,7 +12,12 @@ namespace BoutiqueEnLigne.Core.Services
 {
     public class UtilisateurServices : IUtilisateurServices
     {
-        private IUtilisateur repo;
+        private IUtilisateurServices repo;
+
+        public UtilisateurServices(IUtilisateurServices repo)
+        {
+            this.repo = repo;
+        }
 
         public void Delete(int id)
         {

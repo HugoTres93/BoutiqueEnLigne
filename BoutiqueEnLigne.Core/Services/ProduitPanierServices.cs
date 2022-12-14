@@ -10,8 +10,12 @@ namespace BoutiqueEnLigne.Core.Services
 {
     public class ProduitPanierServices : IProduitPanierServices
     {
-        private IProduitPanier repo;
+        private IProduitPanierServices repo;
 
+        public ProduitPanierServices(IProduitPanierServices repo)
+        {
+            this.repo = repo;
+        }
 
         public void Delete(int id)
         {
