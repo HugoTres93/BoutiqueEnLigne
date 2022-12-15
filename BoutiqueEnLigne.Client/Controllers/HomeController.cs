@@ -7,7 +7,6 @@ namespace BoutiqueEnLigne.Client.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
         //private readonly IExempleService _exempleService;
 
         #region exemple utilisation donnée venant de la partie core
@@ -24,12 +23,6 @@ namespace BoutiqueEnLigne.Client.Controllers
             _serviceUtilisateur = serviceUtilisateur;
         }
         #endregion
-
-        public HomeController(ILogger<HomeController> logger/*, IExempleService exempleService */)
-        {
-            _logger = logger;
-            // _exempleService = exempleService;
-        }
 
         public /* async Task */ IActionResult Index()
         {

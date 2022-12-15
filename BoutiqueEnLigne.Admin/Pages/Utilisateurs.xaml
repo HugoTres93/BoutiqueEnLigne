@@ -5,16 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BoutiqueEnLigne.Admin.Pages"
         mc:Ignorable="d"
-        Title="Utilisateurs" Height="450" Width="800">
+        Title="Utilisateurs" Height="450" Width="800"
+        DataContext = "{Binding RelativeSource = {RelativeSource Self}}"
+        >
+    
     <Grid>
         <ListView x:Name="lstView1" Margin="100,18,100,266" Background="Azure" 
                   ItemsSource="{Binding EvtsLst}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Width="150" Header="Nom" DisplayMemberBinding="{Binding Nom}"/>
-                    <GridViewColumn Width="150" Header="Prenom" DisplayMemberBinding="{Binding Prenom}"/>
-                    <GridViewColumn Width="150" Header="Mail" DisplayMemberBinding="{Binding Mail}"/>
-                    <GridViewColumn Width="150" Header="Mot de passe " DisplayMemberBinding="{Binding Password}"/>
+                    <GridViewColumn Width="0" DisplayMemberBinding="{Binding Path= Id}">
+                        <GridViewColumnHeader Content="Id" Visibility="Collapsed"/>
+                    </GridViewColumn>
+                    <GridViewColumn Width="150" Header="Nom" DisplayMemberBinding="{Binding Path= Nom}"/>
+                    <GridViewColumn Width="150" Header="Prenom" DisplayMemberBinding="{Binding Path= Prenom}"/>
+                    <GridViewColumn Width="150" Header="Mail" DisplayMemberBinding="{Binding Path= Mail}"/>
+                    <GridViewColumn Width="150" Header="Mot de passe " DisplayMemberBinding="{Binding Path= Password}"/>
                 </GridView>
             </ListView.View>
         </ListView>
