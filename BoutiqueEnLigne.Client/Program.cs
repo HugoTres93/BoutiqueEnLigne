@@ -1,4 +1,5 @@
 using BoutiqueEnLigne.Core.Services;
+using BoutiqueEnLigne.Core.Repositories;
 using BoutiqueEnLigne.Repositories;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,6 +11,9 @@ builder.Services.AddDbContext<MyContext>(options => options.UseSqlServer(builder
 //builer.Configuration["ParamTest"];
 //builder.Services.AddScoped<IExempleService, ExempleService>();
 // Enregistrer les services ici
+builder.Services.AddScoped<IProduitPanierRepositories, ProduitPanierRepositories>();
+builder.Services.AddScoped<IProduitRepositories, ProduitRepositories>();
+builder.Services.AddScoped<IUtilisateurRepositories, UtilisateurRepositories>();
 builder.Services.AddScoped<IProduitPanierServices, ProduitPanierServices>();
 builder.Services.AddScoped<IProduitsServices, ProduitsService>();
 builder.Services.AddScoped<IUtilisateurServices, UtilisateurServices>();
