@@ -19,4 +19,12 @@
     <ProjectReference Include="..\BoutiqueEnLigne.Core\BoutiqueEnLigne.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.11" />
+  </ItemGroup>
+
 </Project>
