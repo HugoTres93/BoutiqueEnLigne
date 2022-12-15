@@ -42,39 +42,38 @@ namespace BoutiqueEnLigne.Admin.Pages
             InitializeComponent();
         }
 
-        private void Ajouter_Click(object sender, RoutedEventArgs e)
+        private void AjouterUtilisateur_Click(object sender, RoutedEventArgs e)
         {
-            Utilisateur evt = new Utilisateur { Nom = Txt_Nom.Text, Prenom = Txt_Prenom.Text, Mail = Txt_Mail.Text, Password = Txt_Password.Text};
+            Utilisateur evt = new Utilisateur { Nom = Txt_UtilisateurNom.Text, Prenom = Txt_Prenom.Text, Mail = Txt_Mail.Text, Password = Txt_Password.Text};
             eventService.Insert(evt);
 
             EvtsLst.Add(evt);
         }
 
-        private void Modifier_Click(object sender, RoutedEventArgs e)
+        private void ModifierUtilisateur_Click(object sender, RoutedEventArgs e)
         {
-            Utilisateur? evt = lstView1.SelectedItem as Utilisateur;
+            Utilisateur? evt = lstView2.SelectedItem as Utilisateur;
 
             if (evt != null)
             {
-                evt.Nom = Txt_Nom.Text;
+                evt.Nom = Txt_UtilisateurNom.Text;
                 evt.Prenom = Txt_Prenom.Text;
                 evt.Mail = Txt_Mail.Text;
                 evt.Password = Txt_Password.Text;
                 eventService.Update(evt);
 
-                EvtsLst.RemoveAt(lstView1.SelectedIndex);
+                EvtsLst.RemoveAt(lstView2.SelectedIndex);
                 EvtsLst.Add(evt);
             }
         }
 
-        private void Supprimer_Click(object sender, RoutedEventArgs e)
+        private void SupprimerUtilisateur_Click(object sender, RoutedEventArgs e)
         {
-            
-            Utilisateur? evt = lstView1.SelectedItem  as Utilisateur;
+            Utilisateur? evt = lstView2.SelectedItem  as Utilisateur;
             if (evt != null)
             {
                 eventService.Delete(evt.Id);
-                EvtsLst.RemoveAt(lstView1.SelectedIndex);
+                EvtsLst.RemoveAt(lstView2.SelectedIndex);
             }
         }
     }

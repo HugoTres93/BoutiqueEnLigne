@@ -11,6 +11,6 @@ namespace BoutiqueEnLigne.Core.Model
         public int UtilisateurId { get; set; }
         public Utilisateur Utilisateur{ get; set; }
         public int ProduitsId { get; set; }
-        public Produits Produit { get; set; }
+        public Produit Produit { get; set; }
     }
 }

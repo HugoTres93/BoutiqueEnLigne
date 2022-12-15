@@ -10,7 +10,7 @@
         >
     
     <Grid>
-        <ListView x:Name="lstView1" Margin="100,18,100,266" Background="Azure" 
+        <ListView x:Name="lstView2" Margin="100,18,100,266" Background="Azure" 
                   ItemsSource="{Binding EvtsLst}">
             <ListView.View>
                 <GridView>
@@ -24,14 +24,14 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Content="Ajouter" FontWeight="Bold" HorizontalAlignment="Left" Margin="621,205,0,0" VerticalAlignment="Top" Height="40" Width="70" Click="Ajouter_Click"/>
-        <Button Content="Modifier" FontWeight="Bold" HorizontalAlignment="Left" Margin="621,255,0,0" VerticalAlignment="Top" Height="40" Width="70" Click="Modifier_Click"/>
-        <Button Content="Supprimer" FontWeight="Bold" HorizontalAlignment="Left" Margin="621,308,0,0" VerticalAlignment="Top" Height="40" Width="70" Click="Supprimer_Click"/>
+        <Button Content="Ajouter" FontWeight="Bold" HorizontalAlignment="Left" Margin="621,205,0,0" VerticalAlignment="Top" Height="40" Width="70" Click="AjouterUtilisateur_Click"/>
+        <Button Content="Modifier" FontWeight="Bold" HorizontalAlignment="Left" Margin="621,255,0,0" VerticalAlignment="Top" Height="40" Width="70" Click="ModifierUtilisateur_Click"/>
+        <Button Content="Supprimer" FontWeight="Bold" HorizontalAlignment="Left" Margin="621,308,0,0" VerticalAlignment="Top" Height="40" Width="70" Click="SupprimerUtilisateur_Click"/>
         <Label Content="Nom :" FontWeight="Bold" HorizontalAlignment="Left" Margin="57,187,0,0" VerticalAlignment="Top" Height="40" Width="90" />
         <Label Content="penom :" FontWeight="Bold" HorizontalAlignment="Left" Margin="57,232,0,0" VerticalAlignment="Top" Height="40" Width="90"/>
         <Label Content="Mail :" FontWeight="Bold" HorizontalAlignment="Left" Margin="57,277,0,0" VerticalAlignment="Top" Height="40" Width="90"/>
         <Label Content="Mot de passe :" FontWeight="Bold" HorizontalAlignment="Left" Margin="57,322,0,0" VerticalAlignment="Top" Height="40" Width="90"/>
-        <TextBox x:Name="Txt_Nom" HorizontalAlignment="Left" Margin="239,187,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="40" Width="120"/>
+        <TextBox x:Name="Txt_UtilisateurNom" HorizontalAlignment="Left" Margin="239,187,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="40" Width="120"/>
         <TextBox x:Name="Txt_Prenom" HorizontalAlignment="Left" Margin="239,232,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="40" Width="120"/>
         <TextBox x:Name="Txt_Mail" HorizontalAlignment="Left" Margin="239,277,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="40" Width="120"/>
         <TextBox x:Name="Txt_Password" HorizontalAlignment="Left" Margin="239,322,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="40" Width="120"/>

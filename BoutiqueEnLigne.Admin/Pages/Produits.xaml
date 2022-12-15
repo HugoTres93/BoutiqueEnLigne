@@ -5,9 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BoutiqueEnLigne.Admin.Pages"
         mc:Ignorable="d"
-        Title="Produits" Height="450" Width="800">
+        Title="Produits" Height="450" Width="800"
+        DataContext = "{Binding RelativeSource = {RelativeSource Self}}"
+        >
     <Grid>
-        <DataGrid d:ItemsSource="{d:SampleData ItemCount=4}" Margin="110,18,110,266" SelectionChanged="DataGrid_SelectionChanged"/>
+        <ListView x:Name="lstView1" Margin="100,18,100,266" Background="Azure" 
+                  ItemsSource="{Binding EvtsLst}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="0" DisplayMemberBinding="{Binding Path= Id}">
+                        <GridViewColumnHeader Content="Id" Visibility="Collapsed"/>
+                    </GridViewColumn>
+                    <GridViewColumn Width="150" Header="Produits" DisplayMemberBinding="{Binding Path= Nom}"/>
+                    <GridViewColumn Width="150" Header="Description" DisplayMemberBinding="{Binding Path= Description}"/>
+                    <GridViewColumn Width="150" Header="Image" DisplayMemberBinding="{Binding Path= Image}"/>
+                    <GridViewColumn Width="150" Header="Prix" DisplayMemberBinding="{Binding Path= Prix}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
         <Button Content="Ajouter" FontWeight="Bold" HorizontalAlignment="Left" Margin="621,205,0,0" VerticalAlignment="Top" Height="40" Width="70" Click="Ajouter_Click"/>
         <Button Content="Modifier" FontWeight="Bold" HorizontalAlignment="Left" Margin="621,255,0,0" VerticalAlignment="Top" Height="40" Width="70" Click="Modifier_Click"/>
         <Button Content="Supprimer" FontWeight="Bold" HorizontalAlignment="Left" Margin="621,308,0,0" VerticalAlignment="Top" Height="40" Width="70" Click="Supprimer_Click"/>

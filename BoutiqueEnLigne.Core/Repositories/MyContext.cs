@@ -14,7 +14,7 @@ namespace BoutiqueEnLigne.Repositories
         }
 
         public DbSet<Utilisateur> Utilisateurs { get; set; }
-        public DbSet<Produits> Produits { get; set; }
+        public DbSet<Produit> Produits { get; set; }
         public DbSet<ProduitPanier> ProduitsPaniers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
