@@ -1,5 +1,6 @@
 ﻿using BoutiqueEnLigne.Core.Model;
 using BoutiqueEnLigne.Repositories;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BoutiqueEnLigne.Core.Repositories
 {
-    internal class ProduitPanierRepositories : IProduitPanierRepositories
+    public class ProduitPanierRepositories : IProduitPanierRepositories
     {
         private MyContext _context;
 
@@ -25,11 +26,15 @@ namespace BoutiqueEnLigne.Core.Repositories
                 _context.ProduitsPaniers.Remove(pp);
                 _context.SaveChanges();
             }
+            else
+            {
+                throw new Exception("Panier introuvable");
+            }
         }
 
         public List<ProduitPanier> GetAll()
         {
-            return _context.ProduitsPaniers.ToList();
+            return _context.ProduitsPaniers.AsNoTracking().ToList();
         }
 
         public ProduitPanier GetById(int id)

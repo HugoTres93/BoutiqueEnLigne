@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BoutiqueEnLigne.Core.Repositories
 {
-    internal class UtilisateurRepositories : IUtilisateurRepositories
+    public class UtilisateurRepositories : IUtilisateurRepositories
     {
         private MyContext _context;
 
