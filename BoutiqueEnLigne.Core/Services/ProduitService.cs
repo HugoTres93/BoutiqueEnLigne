@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace BoutiqueEnLigne.Core.Services
 {
-    public class ProduitsService : IProduitsServices
+    public class ProduitService : IProduitServices
     {
         private IProduitRepositories repo;
 
-        public ProduitsService(IProduitRepositories repo)
+        public ProduitService(IProduitRepositories repo)
         {
             this.repo = repo;
         }
@@ -22,24 +22,24 @@ namespace BoutiqueEnLigne.Core.Services
             repo.Delete(id);
         }
 
-        public List<Produits> GetAll()
+        public List<Produit> GetAll()
         {
             return repo.GetAll();
         }
 
-        public Produits GetById(int id)
+        public Produit GetById(int id)
         {
             return repo.GetById(id);
         }
 
-        public void Insert(Produits produits)
+        public void Insert(Produit produit)
         {
-            repo.Insert(produits);
+            repo.Insert(produit);
         }
 
-        public void Update(Produits produits)
+        public void Update(Produit produit)
         {
-            repo.Update(produits);
+            repo.Update(produit);
         }
     }
 }

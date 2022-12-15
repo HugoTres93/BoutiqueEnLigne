@@ -9,8 +9,8 @@ namespace BoutiqueEnLigne.Core.Model
     public class ProduitPanier
     {
         public int UtilisateurId { get; set; }
-        public Utilisateur Utilisateur{ get; set; }
-        public int ProduitsId { get; set; }
-        public Produits Produit { get; set; }
+        public Utilisateur Utilisateur { get; set; }
+        public int ProduitId { get; set; }
+        public Produit Produit { get; set; }
     }
 }

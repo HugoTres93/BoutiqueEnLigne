@@ -9,9 +9,9 @@ namespace BoutiqueEnLigne.Core.Repositories
 {
     public interface IProduitPanierRepositories
     {
-        void Delete(int id);
+        void Delete(int idProd, int idUser);
         List<ProduitPanier> GetAll();
-        ProduitPanier GetById(int id);
+        ProduitPanier GetById(int idPanier, int idUser);
         void Insert(ProduitPanier produitPanier);
         void Update(ProduitPanier produitPanier);
     }

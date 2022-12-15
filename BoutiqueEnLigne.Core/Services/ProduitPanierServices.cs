@@ -17,9 +17,9 @@ namespace BoutiqueEnLigne.Core.Services
             this.repo = repo;
         }
 
-        public void Delete(int id)
+        public void Delete(int idProd, int idUser)
         {
-            repo.Delete(id);
+            repo.Delete(idProd, idUser);
         }
 
         public List<ProduitPanier> GetAll()
@@ -27,9 +27,9 @@ namespace BoutiqueEnLigne.Core.Services
             return repo.GetAll();
         }
 
-        public ProduitPanier GetById(int id)
-        {  
-            return repo.GetById(id);
+        public ProduitPanier GetById(int idProd, int idUser)
+        {
+            return repo.GetById(idProd, idUser);
         }
 
         public void Insert(ProduitPanier produitPanier)

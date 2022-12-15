@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BoutiqueEnLigne.Core.Repositories
 {
-    internal class ProduitRepositories : IProduitRepositories
+    public class ProduitRepositories : IProduitRepositories
     {
         private MyContext _context;
 
@@ -20,7 +20,7 @@ namespace BoutiqueEnLigne.Core.Repositories
 
         public void Delete(int id)
         {
-            Produits p = _context.Produits.Find(id);
+            Produit p = _context.Produits.Find(id);
             if (p != null)
             {
                 _context.Produits.Remove(p);
@@ -28,44 +28,44 @@ namespace BoutiqueEnLigne.Core.Repositories
             }
             else
             {
-                throw new Exception("Produits introuvable");
+                throw new Exception("Produit introuvable");
             }
         }
 
-        public List<Produits> GetAll()
+        public List<Produit> GetAll()
         {
             return _context.Produits.AsNoTracking().ToList();
         }
 
-        public Produits GetById(int id)
+        public Produit GetById(int id)
         {
-            Produits p = _context.Produits.Find(id);
+            Produit p = _context.Produits.Find(id);
             if (p != null)
             {
                 return p;
             }
             else
             {
-                throw new Exception("Produits introuvable");
+                throw new Exception("Produit introuvable");
             }
         }
 
-        public void Insert(Produits produits)
+        public void Insert(Produit produit)
         {
-            _context.Add(produits);
+            _context.Add(produit);
             _context.SaveChanges();
         }
 
-        public void Update(Produits produits)
+        public void Update(Produit produit)
         {
-            Produits ProduitDb = _context.Produits.Find(produits.Id);
+            Produit ProduitDb = _context.Produits.Find(produit.Id);
             if (ProduitDb != null)
             {
-                ProduitDb.Produit = produits.Produit;
-                ProduitDb.Description = produits.Description;
-                ProduitDb.Image = produits.Image;
-                ProduitDb.Prix= produits.Prix;
-                ProduitDb.Paniers= produits.Paniers;
+                ProduitDb.Nom = produit.Nom;
+                ProduitDb.Description = produit.Description;
+                ProduitDb.Image = produit.Image;
+                ProduitDb.Prix = produit.Prix;
+                ProduitDb.Paniers = produit.Paniers;
                 _context.SaveChanges();
             }
             else

@@ -11,7 +11,7 @@ builder.Services.AddDbContext<MyContext>(options => options.UseSqlServer(builder
 //builder.Services.AddScoped<IExempleService, ExempleService>();
 // Enregistrer les services ici
 builder.Services.AddScoped<IProduitPanierServices, ProduitPanierServices>();
-builder.Services.AddScoped<IProduitsServices, ProduitsService>();
+builder.Services.AddScoped<IProduitServices, ProduitsService>();
 builder.Services.AddScoped<IUtilisateurServices, UtilisateurServices>();
 
 var app = builder.Build();
