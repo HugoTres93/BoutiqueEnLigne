@@ -37,5 +37,6 @@ namespace BoutiqueEnLigne.Admin
             Produits gererProd = new Produits();
             gererProd.ShowDialog();
         }
+
     }
 }

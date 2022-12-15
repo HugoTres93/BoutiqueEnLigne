@@ -38,5 +38,10 @@ namespace BoutiqueEnLigne.Admin.Pages
         {
 
         }
+
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

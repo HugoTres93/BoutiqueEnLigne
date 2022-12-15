@@ -1,5 +1,10 @@
-﻿using System;
+﻿using BoutiqueEnLigne.Core.Model;
+using BoutiqueEnLigne.Core.Services;
+using BoutiqueEnLigne.Repositories;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,8 +24,14 @@ namespace BoutiqueEnLigne.Admin.Pages
     /// </summary>
     public partial class Utilisateurs : Window
     {
+        public ObservableCollection<Utilisateur> EvtsLst { get; set; }
+        private MyContext db;
+        private IUtilisateurServices eventService;
+
         public Utilisateurs()
         {
+            List<Utilisateur> listEvents = eventService.GetAll(); //Récuperation des events (BDD)
+            EvtsLst = new ObservableCollection<Utilisateur>(listEvents);
             InitializeComponent();
         }
 

@@ -7,19 +7,30 @@
         mc:Ignorable="d"
         Title="Utilisateurs" Height="450" Width="800">
     <Grid>
-        <DataGrid d:ItemsSource="{d:SampleData ItemCount=4}" Margin="110,18,110,266"/>
-        <Button Content="Ajouter" HorizontalAlignment="Left" Margin="621,205,0,0" VerticalAlignment="Top" Height="40" Width="70" Click="Ajouter_Click"/>
-        <Button Content="Modifier" HorizontalAlignment="Left" Margin="621,255,0,0" VerticalAlignment="Top" Height="40" Width="70" Click="Modifier_Click"/>
-        <Button Content="Supprimer" HorizontalAlignment="Left" Margin="621,308,0,0" VerticalAlignment="Top" Height="40" Width="70" Click="Supprimer_Click"/>
-        <Label Content="Nom :" HorizontalAlignment="Left" Margin="57,187,0,0" VerticalAlignment="Top" Height="40" Width="90" />
-        <Label Content="penom :" HorizontalAlignment="Left" Margin="57,232,0,0" VerticalAlignment="Top" Height="40" Width="90"/>
-        <Label Content="Mail :" HorizontalAlignment="Left" Margin="57,277,0,0" VerticalAlignment="Top" Height="40" Width="90"/>
-        <Label Content="Mot de passe :" HorizontalAlignment="Left" Margin="57,322,0,0" VerticalAlignment="Top" Height="40" Width="90"/>
-        <TextBox HorizontalAlignment="Left" Margin="239,277,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="40" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="239,232,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="40" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="239,322,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="40" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="239,187,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="40" Width="120"/>
-
+        <ListView x:Name="lstView1" Margin="100,18,100,266" Background="Azure" 
+                  ItemsSource="{Binding EvtsLst}" SelectionChanged="lstView1_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="100" Header="Id" DisplayMemberBinding="{Binding Id}"/>
+                    <GridViewColumn Width="100" Header="Nom" DisplayMemberBinding="{Binding Nom}"/>
+                    <GridViewColumn Width="100" Header="Prenom" DisplayMemberBinding="{Binding Prenom}"/>
+                    <GridViewColumn Width="100" Header="Mail" DisplayMemberBinding="{Binding Mail}"/>
+                    <GridViewColumn Width="100" Header="Mot de passe " DisplayMemberBinding="{Binding Password}"/>
+                    <GridViewColumn Width="100" Header="Panier" DisplayMemberBinding="{Binding Panier}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="Ajouter" FontWeight="Bold" HorizontalAlignment="Left" Margin="621,205,0,0" VerticalAlignment="Top" Height="40" Width="70" Click="Ajouter_Click"/>
+        <Button Content="Modifier" FontWeight="Bold" HorizontalAlignment="Left" Margin="621,255,0,0" VerticalAlignment="Top" Height="40" Width="70" Click="Modifier_Click"/>
+        <Button Content="Supprimer" FontWeight="Bold" HorizontalAlignment="Left" Margin="621,308,0,0" VerticalAlignment="Top" Height="40" Width="70" Click="Supprimer_Click"/>
+        <Label Content="Nom :" FontWeight="Bold" HorizontalAlignment="Left" Margin="57,187,0,0" VerticalAlignment="Top" Height="40" Width="90" />
+        <Label Content="penom :" FontWeight="Bold" HorizontalAlignment="Left" Margin="57,232,0,0" VerticalAlignment="Top" Height="40" Width="90"/>
+        <Label Content="Mail :" FontWeight="Bold" HorizontalAlignment="Left" Margin="57,277,0,0" VerticalAlignment="Top" Height="40" Width="90"/>
+        <Label Content="Mot de passe :" FontWeight="Bold" HorizontalAlignment="Left" Margin="57,322,0,0" VerticalAlignment="Top" Height="40" Width="90"/>
+        <TextBox x:Name="Txt_Nom" HorizontalAlignment="Left" Margin="239,187,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="40" Width="120"/>
+        <TextBox x:Name="Txt_Prenom" HorizontalAlignment="Left" Margin="239,232,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="40" Width="120"/>
+        <TextBox x:Name="Txt_Mail" HorizontalAlignment="Left" Margin="239,277,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="40" Width="120"/>
+        <TextBox x:Name="Txt_Password" HorizontalAlignment="Left" Margin="239,322,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="40" Width="120"/>
 
     </Grid>
 </Window>
