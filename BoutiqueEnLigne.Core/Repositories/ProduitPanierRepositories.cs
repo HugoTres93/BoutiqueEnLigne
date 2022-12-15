@@ -32,7 +32,7 @@ namespace BoutiqueEnLigne.Core.Repositories
             }
         }
 
-        public List<ProduitPanier> GetAll()
+        public List<ProduitPanier> GetAll(int idUser)
         {
             return _context.ProduitsPaniers.AsNoTracking().ToList();
         }
