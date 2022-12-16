@@ -32,7 +32,7 @@ namespace BoutiqueEnLigne.Admin
         private MyContext db;
 
         private IUtilisateurServices eventServiceUtilisateur;
-        private IProduitsServices eventService;
+        private IProduitServices eventService;
 
 
         public MainWindow()
@@ -48,7 +48,7 @@ namespace BoutiqueEnLigne.Admin
             EvtsLstUtilisateur = new ObservableCollection<Utilisateur>(listEventsUtilisateur);
 
             // Produit
-            eventService = new ProduitsService(new ProduitRepositories(db));
+            eventService = new ProduitService(new ProduitRepositories(db));
             List<Produit> listEvents = eventService.GetAll(); //Récuperation des events (BDD)
             EvtsLst = new ObservableCollection<Produit>(listEvents);
             InitializeComponent();

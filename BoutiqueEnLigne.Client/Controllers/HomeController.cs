@@ -12,11 +12,11 @@ namespace BoutiqueEnLigne.Client.Controllers
         #region exemple utilisation donnée venant de la partie core
         private readonly IProduitPanierServices _servicePanier;
 
-        private readonly IProduitsServices _serviceProduits;
+        private readonly IProduitServices _serviceProduits;
 
         private readonly IUtilisateurServices _serviceUtilisateur;
 
-        public HomeController(IProduitPanierServices servicePanier, IProduitsServices serviceProduits, IUtilisateurServices serviceUtilisateur)
+        public HomeController(IProduitPanierServices servicePanier, IProduitServices serviceProduits, IUtilisateurServices serviceUtilisateur)
         {
             _servicePanier = servicePanier;
             _serviceProduits = serviceProduits;
@@ -42,22 +42,5 @@ namespace BoutiqueEnLigne.Client.Controllers
         }
     }
 
-    public IActionResult Index()
-    {
-        return View();
-    }
-    [HttpPost]
-    public IActionResult Index([Bind] Ad_login ad)
-    {
-        int res = dbop.LoginCheck(ad);
-        if (res == 1)
-        {
-            TempData["msg"] = "You are welcome to Admin Section";
-        }
-        else
-        {
-            TempData["msg"] = "Admin id or Password is wrong.!";
-        }
-        return View();
-    }
 }
+ 
