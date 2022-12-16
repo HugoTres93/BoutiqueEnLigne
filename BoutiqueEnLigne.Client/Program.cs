@@ -2,17 +2,12 @@ using BoutiqueEnLigne.Core.Repositories;
 using BoutiqueEnLigne.Core.Services;
 using BoutiqueEnLigne.Repositories;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity;
-using BoutiqueEnLigne.Client.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<MyContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("connexion")));
-
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<BoutiqueEnLigneClientContext>();
 //builer.Configuration["ParamTest"];
 //builder.Services.AddScoped<IExempleService, ExempleService>();
 // Enregistrer les services ici
@@ -33,7 +28,6 @@ if (!app.Environment.IsDevelopment())
 app.UseStaticFiles();
 
 app.UseRouting();
-app.UseAuthentication();;
 
 app.UseAuthorization();
 
