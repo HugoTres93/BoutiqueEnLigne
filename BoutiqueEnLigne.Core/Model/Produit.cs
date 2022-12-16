@@ -12,7 +12,7 @@ namespace BoutiqueEnLigne.Core.Model
         public string Nom { get; set; }
         public string Description { get; set; }
         public string Image { get; set; }
-        public int Prix { get; set; }
+        public double Prix { get; set; }
         public ICollection<ProduitPanier> Paniers { get; set; }
     }
 }

@@ -110,7 +110,7 @@ namespace BoutiqueEnLigne.Admin
         // Partie Produit
         private void Ajouter_Click(object sender, RoutedEventArgs e)
         {
-            Produit evt = new Produit { Nom = Txt_Nom.Text, Description = Txt_Description.Text, Image = Txt_Image.Text, Prix = Convert.ToInt32(Txt_Prix.Text) };
+            Produit evt = new Produit { Nom = Txt_Nom.Text, Description = Txt_Description.Text, Image = Txt_Image.Text, Prix = Convert.ToDouble(Txt_Prix.Text) };
             eventService.Insert(evt);
 
             EvtsLst.Add(evt);
