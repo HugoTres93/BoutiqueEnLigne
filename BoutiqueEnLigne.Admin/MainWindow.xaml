@@ -25,10 +25,10 @@
                         <GridViewColumn Width="0" DisplayMemberBinding="{Binding Id}">
                             <GridViewColumnHeader Content="Id" Visibility="Collapsed"/>
                         </GridViewColumn>
-                        <GridViewColumn Width="150" Header="Produits" x:Name="gridNomProduit" DisplayMemberBinding="{Binding Nom}"/>
-                        <GridViewColumn Width="150" Header="Description" x:Name="gridDescription" DisplayMemberBinding="{Binding Description}"/>
-                        <GridViewColumn Width="150" Header="Image" x:Name="gridImage" DisplayMemberBinding="{Binding Image}"/>
-                        <GridViewColumn Width="150" Header="Prix" x:Name="gridPrix" DisplayMemberBinding="{Binding Prix}"/>
+                        <GridViewColumn Width="150" Header="Produits" DisplayMemberBinding="{Binding Nom}"/>
+                        <GridViewColumn Width="150" Header="Description" DisplayMemberBinding="{Binding Description}"/>
+                        <GridViewColumn Width="150" Header="Image" DisplayMemberBinding="{Binding Image}"/>
+                        <GridViewColumn Width="150" Header="Prix" DisplayMemberBinding="{Binding Prix}"/>
                     </GridView>
                 </ListView.View>
             </ListView>
@@ -59,10 +59,10 @@
                         <GridViewColumn Width="0" DisplayMemberBinding="{Binding Id}">
                             <GridViewColumnHeader Content="Id" Visibility="Collapsed"/>
                         </GridViewColumn>
-                        <GridViewColumn Width="150" Header="Nom" x:Name="gridNomUser" DisplayMemberBinding="{Binding Nom}"/>
-                        <GridViewColumn Width="150" Header="Prenom" x:Name="gridPrenomUser" DisplayMemberBinding="{Binding Prenom}"/>
-                        <GridViewColumn Width="150" Header="Mail" x:Name="gridMail" DisplayMemberBinding="{Binding Mail}"/>
-                        <GridViewColumn Width="150" Header="Mot de passe " x:Name="gridMdp" DisplayMemberBinding="{Binding Password}"/>
+                        <GridViewColumn Width="150" Header="Nom" DisplayMemberBinding="{Binding Nom}"/>
+                        <GridViewColumn Width="150" Header="Prenom" DisplayMemberBinding="{Binding Prenom}"/>
+                        <GridViewColumn Width="150" Header="Mail" DisplayMemberBinding="{Binding Mail}"/>
+                        <GridViewColumn Width="150" Header="Mot de passe " DisplayMemberBinding="{Binding Password}"/>
                     </GridView>
                 </ListView.View>
             </ListView>
