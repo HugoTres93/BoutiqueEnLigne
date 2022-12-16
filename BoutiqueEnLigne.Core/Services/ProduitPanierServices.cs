@@ -22,9 +22,9 @@ namespace BoutiqueEnLigne.Core.Services
             repo.Delete(idProd, idUser);
         }
 
-        public List<ProduitPanier> GetAll()
+        public List<ProduitPanier> GetAll(int idUser)
         {
-            return repo.GetAll();
+            return repo.GetAll(idUser);
         }
 
         public ProduitPanier GetById(int idProd, int idUser)

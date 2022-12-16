@@ -10,7 +10,7 @@ namespace BoutiqueEnLigne.Core.Services
     public interface IProduitPanierServices
     {
         void Delete(int idProd, int idUser);
-        List<ProduitPanier> GetAll();
+        List<ProduitPanier> GetAll(int idUser);
         ProduitPanier GetById(int idProd, int idUser);
         void Insert(ProduitPanier produitPanier);
         void Update(ProduitPanier produitPanier);

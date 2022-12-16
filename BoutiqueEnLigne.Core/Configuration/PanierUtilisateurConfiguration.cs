@@ -16,7 +16,7 @@ namespace BoutiqueEnLigne.Core.Configuration
         public void Configure(EntityTypeBuilder<ProduitPanier> builder)
         {
 
-            builder.HasKey(p => new { p.UtilisateurId, p.ProduitsId });
+            builder.HasKey(p => new { p.UtilisateurId, p.ProduitId });
             // Utilisateur vers panier one to many
             builder.HasOne(p => p.Utilisateur)
                 .WithMany(p => p.Panier)
@@ -24,7 +24,7 @@ namespace BoutiqueEnLigne.Core.Configuration
             // Produit vers panier one to many
             builder.HasOne(p => p.Produit)
                 .WithMany(p => p.Paniers)
-                .HasForeignKey(p => p.ProduitsId);
+                .HasForeignKey(p => p.ProduitId);
         }
     }
 }
