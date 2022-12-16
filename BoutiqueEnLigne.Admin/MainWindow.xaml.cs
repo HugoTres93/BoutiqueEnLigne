@@ -75,6 +75,11 @@ namespace BoutiqueEnLigne.Admin
             Utilisateur evt = new Utilisateur { Nom = Txt_UtilisateurNom.Text, Prenom = Txt_Prenom.Text, Mail = Txt_Mail.Text, Password = Txt_Password.Text };
             eventServiceUtilisateur.Insert(evt);
 
+            Txt_UtilisateurNom.Clear();
+            Txt_Prenom.Clear();
+            Txt_Mail.Clear();
+            Txt_Password.Clear();
+
             EvtsLstUtilisateur.Add(evt);
         }
 
@@ -89,6 +94,11 @@ namespace BoutiqueEnLigne.Admin
                 evt.Mail = Txt_Mail.Text;
                 evt.Password = Txt_Password.Text;
                 eventServiceUtilisateur.Update(evt);
+
+                Txt_UtilisateurNom.Clear();
+                Txt_Prenom.Clear();
+                Txt_Mail.Clear();
+                Txt_Password.Clear();
 
                 EvtsLstUtilisateur.RemoveAt(lstView2.SelectedIndex);
                 EvtsLstUtilisateur.Add(evt);
@@ -112,6 +122,11 @@ namespace BoutiqueEnLigne.Admin
             Produit evt = new Produit { Nom = Txt_Nom.Text, Description = Txt_Description.Text, Image = Txt_Image.Text, Prix = Convert.ToDouble(Txt_Prix.Text) };
             eventService.Insert(evt);
 
+            Txt_Nom.Clear();
+            Txt_Description.Clear();
+            Txt_Image.Clear();
+            Txt_Prix.Clear();
+
             EvtsLst.Add(evt);
         }
 
@@ -126,6 +141,11 @@ namespace BoutiqueEnLigne.Admin
                 evt.Image = Txt_Image.Text;
                 evt.Prix = Convert.ToInt32(Txt_Prix.Text);
                 eventService.Update(evt);
+
+                Txt_Nom.Clear();
+                Txt_Description.Clear();
+                Txt_Image.Clear();
+                Txt_Prix.Clear();
 
                 EvtsLst.RemoveAt(lstView1.SelectedIndex);
                 EvtsLst.Add(evt);
