@@ -57,29 +57,15 @@ namespace BoutiqueEnLigne.Admin
         // Afficher Utilisateur
         private void gereUtilisateur_Click(object sender, RoutedEventArgs e)
         {
-            //Utilisateur? evt = lstView2.SelectedItem as Utilisateur;
-
             GridProduit.Visibility= Visibility.Collapsed;
             GridUtilisateur.Visibility = Visibility.Visible;
-
-            //Txt_UtilisateurNom.Text = evt.Nom;
-            //Txt_Prenom.Text = evt.Prenom;
-            //Txt_Mail.Text = evt.Mail;
-            //Txt_Password.Text = evt.Password;
         }
 
         // Afficher Produit
         private void gereProduit_Click(object sender, RoutedEventArgs e)
         {            
-            //Produit? evt = lstView1.SelectedItem as Produit;
-
             GridUtilisateur.Visibility = Visibility.Collapsed;
             GridProduit.Visibility = Visibility.Visible;
-
-            //Txt_Nom.Text = evt.Nom;
-            //Txt_Description.Text = evt.Description;
-            //Txt_Image.Text = evt.Image;
-            //Txt_Prix.Text = Convert.ToString(evt.Prix);
         }
 
 
