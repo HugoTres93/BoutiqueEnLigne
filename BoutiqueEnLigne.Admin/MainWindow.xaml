@@ -50,7 +50,7 @@
         </Grid>
         
         <!-- Affichage Utilisateur -->
-        <Grid x:Name="GridUtilisateur" Visibility="Visible">
+        <Grid x:Name="GridUtilisateur" Visibility="Collapsed">
             
             <ListView x:Name="lstView2" Margin="100,18,100,266" Background="Azure" 
                   ItemsSource="{Binding EvtsLstUtilisateur}">
