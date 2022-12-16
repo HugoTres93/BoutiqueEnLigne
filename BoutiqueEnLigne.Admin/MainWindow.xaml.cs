@@ -1,5 +1,4 @@
-﻿using BoutiqueEnLigne.Admin.Pages;
-using BoutiqueEnLigne.Core.Model;
+﻿using BoutiqueEnLigne.Core.Model;
 using BoutiqueEnLigne.Core.Repositories;
 using BoutiqueEnLigne.Core.Services;
 using BoutiqueEnLigne.Repositories;
