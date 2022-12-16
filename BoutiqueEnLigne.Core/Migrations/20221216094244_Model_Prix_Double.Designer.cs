@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BoutiqueEnLigne.Core.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20221213134646_ProduitPanier")]
-    partial class ProduitPanier
+    [Migration("20221216094244_Model_Prix_Double")]
+    partial class Model_Prix_Double
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,22 +23,7 @@ namespace BoutiqueEnLigne.Core.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("BoutiqueEnLigne.Core.Model.ProduitPanier", b =>
-                {
-                    b.Property<int>("UtilisateurId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProduitsId")
-                        .HasColumnType("int");
-
-                    b.HasKey("UtilisateurId", "ProduitsId");
-
-                    b.HasIndex("ProduitsId");
-
-                    b.ToTable("ProduitsPaniers");
-                });
-
-            modelBuilder.Entity("BoutiqueEnLigne.Core.Model.Produits", b =>
+            modelBuilder.Entity("BoutiqueEnLigne.Core.Model.Produit", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -54,16 +39,31 @@ namespace BoutiqueEnLigne.Core.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Prix")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Produit")
+                    b.Property<string>("Nom")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Prix")
+                        .HasColumnType("float");
 
                     b.HasKey("Id");
 
                     b.ToTable("Produits");
+                });
+
+            modelBuilder.Entity("BoutiqueEnLigne.Core.Model.ProduitPanier", b =>
+                {
+                    b.Property<int>("UtilisateurId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProduitsId")
+                        .HasColumnType("int");
+
+                    b.HasKey("UtilisateurId", "ProduitsId");
+
+                    b.HasIndex("ProduitsId");
+
+                    b.ToTable("ProduitsPaniers");
                 });
 
             modelBuilder.Entity("BoutiqueEnLigne.Core.Model.Utilisateur", b =>
@@ -97,7 +97,7 @@ namespace BoutiqueEnLigne.Core.Migrations
 
             modelBuilder.Entity("BoutiqueEnLigne.Core.Model.ProduitPanier", b =>
                 {
-                    b.HasOne("BoutiqueEnLigne.Core.Model.Produits", "Produit")
+                    b.HasOne("BoutiqueEnLigne.Core.Model.Produit", "Produit")
                         .WithMany("Paniers")
                         .HasForeignKey("ProduitsId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -114,7 +114,7 @@ namespace BoutiqueEnLigne.Core.Migrations
                     b.Navigation("Utilisateur");
                 });
 
-            modelBuilder.Entity("BoutiqueEnLigne.Core.Model.Produits", b =>
+            modelBuilder.Entity("BoutiqueEnLigne.Core.Model.Produit", b =>
                 {
                     b.Navigation("Paniers");
                 });
