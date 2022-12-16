@@ -50,7 +50,7 @@ namespace BoutiqueEnLigne.Core.Repositories
             }
         }
 
-        public void Insert(Produit produit)
+        public async void Insert(Produit produit)
         {
             _context.Add(produit);
             _context.SaveChanges();
