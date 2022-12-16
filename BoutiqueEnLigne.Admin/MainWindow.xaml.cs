@@ -139,7 +139,7 @@ namespace BoutiqueEnLigne.Admin
                 evt.Nom = Txt_Nom.Text;
                 evt.Description = Txt_Description.Text;
                 evt.Image = Txt_Image.Text;
-                evt.Prix = Convert.ToInt32(Txt_Prix.Text);
+                evt.Prix = Convert.ToDouble(Txt_Prix.Text);
                 eventService.Update(evt);
 
                 Txt_Nom.Clear();
